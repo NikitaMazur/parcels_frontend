@@ -18,7 +18,7 @@ export const Login = (user) => {
                         break;
 
                     default:
-                        throw new Error()
+                        break;
                 }
             })
     }

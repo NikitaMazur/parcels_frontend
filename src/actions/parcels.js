@@ -18,7 +18,7 @@ export const getParcels = () => {
                         break;
 
                     default:
-                        throw new Error()
+                        break;
                 }
             })
     }
@@ -39,7 +39,7 @@ export const getIncomingParcels = () => {
                         break;
 
                     default:
-                        throw new Error()
+                        break;
                 }
             })
     }
@@ -58,7 +58,7 @@ export const changeStatus = (data) => {
                         break;
 
                     default:
-                        throw new Error()
+                        break;
                 }
             })
     }
