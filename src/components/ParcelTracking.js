@@ -44,14 +44,7 @@ export default class ParcelTracking extends React.Component {
     }
 
     onSubmit() {
-        let obj ={};
-        for (let item in this.state) {
-            if (this.state[item] !== '') {
-                obj[item] = this.state[item]
-            }
-        }
-
-        this.props.searchParcels(obj)
+        this.props.searchParcels(this.state)
     }
 
     render() {

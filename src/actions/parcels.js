@@ -80,6 +80,10 @@ export const searchParcels = (data) => {
                         break;
 
                     default:
+                        dispatch({
+                            type: 'TRACK_PARCELS',
+                            trackParcels: []
+                        })
                         break;
                 }
             })
