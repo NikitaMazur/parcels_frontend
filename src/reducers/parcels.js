@@ -5,29 +5,24 @@ const initState = {
 }
 
 export default function (state = initState, action) {
-    var newState = state
-
     switch (action.type) {
         case 'GET_PARCELS': {
-            newState = { ...newState, parcels: action.parcels }
-            newState.trackParcels = [];
+            return { ...state, parcels: action.parcels, trackParcels: [] }
             break
         }
 
         case 'GET_INCOMING_PARCELS': {
-            newState = { ...newState, incomingParcels: action.incomingParcels }
-            newState.trackParcels = [];
+            return { ...state, incomingParcels: action.incomingParcels, trackParcels: [] }
             break
         }
 
         case 'TRACK_PARCELS': {
-            newState = { ...newState, trackParcels: action.trackParcels }
+            return { ...state, trackParcels: action.trackParcels }
             break
         }
 
         default:
+        return state
         break
     }
-
-    return newState
 }
