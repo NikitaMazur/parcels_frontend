@@ -7,20 +7,18 @@ const initState = {
 export default function (state, action) {
     if (!state) return initState
 
-    var newState
+    let newState = state;
 
 
     switch (action.type) {
         case 'AUTH_USER_SUCCESS': {
-            newState = { ...{}, ...state }
-            newState.login = true
+            newState = { ...newState, login: true }
             break
         }
         
         case 'AUTH_USER_LOGOUT': {
             Cookies.expire('AuthToken');
-            newState = { ...{}, ...state }
-            newState.login = false
+            newState = { ...newState, login: false }
             break
         }
 

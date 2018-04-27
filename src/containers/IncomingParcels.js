@@ -10,7 +10,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = state => {
     return {
-      parcels: state.parcels.parcels
+      parcels: state.parcels.incomingParcels
     }
   }
 

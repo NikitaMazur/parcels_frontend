@@ -22,7 +22,7 @@ export default class Login extends React.Component {
         }
     }
 
-    onChangeHandler(event) {
+    onChangeHandler = (event)  => {
         let field = event.currentTarget;
 
         this.setState({
@@ -33,7 +33,7 @@ export default class Login extends React.Component {
         })
     }
 
-    onSubmit(event) {
+    onSubmit = (event) => {
         this.props.login(this.state.form)
     }
 
@@ -46,7 +46,7 @@ export default class Login extends React.Component {
                     name="username"
                     type="text"
                     value={this.state.form.email}
-                    onChange={this.onChangeHandler.bind(this)}
+                    onChange={this.onChangeHandler}
                 />
                 <HelpBlock></HelpBlock>
                 <ControlLabel>Password</ControlLabel>
@@ -54,11 +54,11 @@ export default class Login extends React.Component {
                     name="password"
                     type="password"
                     value={this.state.form.password}
-                    onChange={this.onChangeHandler.bind(this)}
+                    onChange={this.onChangeHandler}
                 />
                 <HelpBlock></HelpBlock>
                 <HelpBlock></HelpBlock>
-                <LoginButton block bsStyle="primary" type="submit" onClick={this.onSubmit.bind(this)}>Log In</LoginButton>
+                <LoginButton block bsStyle="primary" type="submit" onClick={this.onSubmit}>Log In</LoginButton>
                 <LoginLink to="/track">Track parcels</LoginLink>
             </FormGroup>
         );

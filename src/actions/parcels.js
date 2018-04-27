@@ -5,10 +5,6 @@ import { PARCEL_URL } from '../constants/api'
 
 export const getParcels = () => {
     return (dispatch) => {
-        dispatch({
-            type: 'GET_PARCELS',
-            parcels: [],
-        })
         request
             .get(`${PARCEL_URL}/parcels`)
             .set('Token', Cookies.get('AuthToken'))
@@ -30,10 +26,6 @@ export const getParcels = () => {
 
 export const getIncomingParcels = () => {
     return (dispatch) => {
-        dispatch({
-            type: 'GET_PARCELS',
-            parcels: [],
-        })
         request
             .get(`${PARCEL_URL}/parcels/status?status=out for delivery`)
             .set('Token', Cookies.get('AuthToken'))
@@ -41,8 +33,8 @@ export const getIncomingParcels = () => {
                 switch (res.statusCode) {
                     case 200:
                         dispatch({
-                            type: 'GET_PARCELS',
-                            parcels: res.body
+                            type: 'GET_INCOMING_PARCELS',
+                            incomingParcels: res.body
                         })
                         break;
 
