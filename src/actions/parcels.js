@@ -5,6 +5,10 @@ import { PARCEL_URL } from '../constants/api'
 
 export const getParcels = () => {
     return (dispatch) => {
+        dispatch({
+            type: 'GET_PARCELS',
+            parcels: [],
+        })
         request
             .get(`${PARCEL_URL}/parcels`)
             .set('Token', Cookies.get('AuthToken'))
@@ -26,6 +30,10 @@ export const getParcels = () => {
 
 export const getIncomingParcels = () => {
     return (dispatch) => {
+        dispatch({
+            type: 'GET_PARCELS',
+            parcels: [],
+        })
         request
             .get(`${PARCEL_URL}/parcels/status?status=out for delivery`)
             .set('Token', Cookies.get('AuthToken'))
