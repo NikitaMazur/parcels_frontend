@@ -46,7 +46,7 @@ export default class AllParcels extends React.Component {
         this.props.changeStatus(obj);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getParcels();
     }
 

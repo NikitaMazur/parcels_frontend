@@ -6,7 +6,7 @@ import { MainTitle } from './App';
 
 export default class IncomingParcels extends React.Component {
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getIncomingParcels();
     }
 
