@@ -4,11 +4,8 @@ const initState = {
     trackParcels: [],
 }
 
-export default function (state, action) {
-    if (!state) return initState
-
+export default function (state = initState, action) {
     var newState = state
-
 
     switch (action.type) {
         case 'GET_PARCELS': {
@@ -32,5 +29,5 @@ export default function (state, action) {
         break
     }
 
-    return newState ? newState : state
+    return newState
 }

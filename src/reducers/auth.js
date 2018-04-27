@@ -4,11 +4,8 @@ const initState = {
     login: Cookies.get('AuthToken') ? true : false,
 }
 
-export default function (state, action) {
-    if (!state) return initState
-
+export default function (state = initState, action) {
     let newState = state;
-
 
     switch (action.type) {
         case 'AUTH_USER_SUCCESS': {
@@ -26,5 +23,5 @@ export default function (state, action) {
         break
     }
 
-    return newState ? newState : state
+    return newState
 }
