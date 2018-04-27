@@ -80,7 +80,7 @@ export const searchParcels = (data) => {
                         break;
 
                     default:
-                        throw new Error()
+                        break;
                 }
             })
     }

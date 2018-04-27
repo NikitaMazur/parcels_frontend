@@ -117,6 +117,9 @@ export default class ParcelTracking extends React.Component {
                             </tbody>
                         </Table>
                     )}
+                    {parcels.length === 0 && (
+                        <p>Parcels not found</p>
+                    )}
                 </Container>
             </FullHeightWrapper>
         );
