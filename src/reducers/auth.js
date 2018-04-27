@@ -18,7 +18,7 @@ export default function (state = initState, action) {
         }
 
         default:
-        return state
+            return state
         break
     }
 }
