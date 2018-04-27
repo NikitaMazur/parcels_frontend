@@ -13,10 +13,11 @@ export const CompanyLogo = styled.img`
 `;
 
 const LoggedinBlock = styled.div`
-    padding-left: 100px;
+    margin-left: 100px;
 
     @media (max-width: 767px) {
         padding: 20px 0 0;
+        margin-left: 0;
     }
 `;
 
