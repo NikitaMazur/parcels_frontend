@@ -94,6 +94,7 @@ export default class ParcelTracking extends React.Component {
                                     <th>#</th>
                                     <th>Courrier Name</th>
                                     <th>Tracking Reference</th>
+                                    <th>Location</th>
                                     <th>Recipient Name</th>
                                     <th>Logo</th>
                                     <th>Status</th>
@@ -106,6 +107,7 @@ export default class ParcelTracking extends React.Component {
                                             <td>{index}</td>
                                             <td>{item.courier_name}</td>
                                             <td>{item.reference}</td>
+                                            <td>{item.recipient_location}</td>
                                             <td>{`${item.recipient_first_name} ${item.recipient_last_name}`}</td>
                                             <td><CompanyLogo src="https://www.chakree.in/images/logo-hyderabad-india/logo%20designer%20hyderabad.jpg" alt="logo"/></td>
                                             <td>{item.status}</td>
