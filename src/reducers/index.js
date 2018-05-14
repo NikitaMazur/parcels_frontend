@@ -1,8 +1,9 @@
-import {combineReducers} from 'redux'
 import auth from './auth'
 import parcels from './parcels'
 
-export default combineReducers({
+const reducer = {
     auth,
     parcels,
-})
+};
+
+export default reducer;

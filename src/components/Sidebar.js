@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import SidebarBurger from './SidebarBurger';
 
@@ -44,7 +44,7 @@ const SidebarBlock = styled.div`
     }
 `;
 
-const SidebarLink = styled(Link)`
+const SidebarLink = styled(NavLink)`
     &,
     &:link,
     &:visited {
@@ -55,7 +55,8 @@ const SidebarLink = styled(Link)`
         color: black;
         font-weight: 500;
 
-        &:hover {
+        &:hover,
+        &.active {
             text-decoration: none;
             background-color: #f1f1f1;
         }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Provider } from 'react-redux'
-import { createStore , applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
+import { createStore , applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom'
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 
+import createHistory from 'history/createBrowserHistory';
 import reducer from '../reducers';
 import Content from '../containers/Content';
 
@@ -30,15 +30,24 @@ export const MainTitle = styled.h2`
     margin: 0 0 30px 0;
 `;
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
+const history = createHistory()
+const middleware = routerMiddleware(history)
+const store = createStore(
+  combineReducers({
+    ...reducer,
+    router: routerReducer
+  }),
+  applyMiddleware(middleware),
+  applyMiddleware(thunk),
+)
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <ConnectedRouter history={history}>
           <Content />
-        </BrowserRouter>
+        </ConnectedRouter>
       </Provider>
     );
   }
